@@ -213,12 +213,12 @@ ESP32Camera::ESP32Camera() {
   this->config_.pin_xclk = -1;
   this->config_.ledc_timer = LEDC_TIMER_0;
   this->config_.ledc_channel = LEDC_CHANNEL_0;
-  this->config_.pixel_format = PIXFORMAT_JPEG;
-  this->config_.frame_size = FRAMESIZE_VGA;  // 640x480
+  this->config_.pixel_format = PIXFORMAT_RGB565; //JPEG, RGB565, YUV422
+  this->config_.frame_size = FRAMESIZE_QQVGA;
   this->config_.jpeg_quality = 10;
   this->config_.fb_count = 1;
   this->config_.grab_mode = CAMERA_GRAB_WHEN_EMPTY;
-  this->config_.fb_location = CAMERA_FB_IN_PSRAM;
+  this->config_.fb_location = CAMERA_FB_IN_DRAM; //DRAM, PSRAM
 
   global_esp32_camera = this;
 }
